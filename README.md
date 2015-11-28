@@ -3,14 +3,13 @@ Live video streaming via WiFi-Direct using the Udon Neo platform.
 This project will be used for the 2016 UAS competition.
 
 <h3> Dependencies </h3>
-- NodeJS
-- BinaryJS (https://github.com/binaryjs/binaryjs)
-- WebcamJS (https://github.com/jhuckaby/webcamjs)
+- Flask
+- AngularJS
 
 <h3> How To Run </h3>
 ```
-//on the server side
-node server.js
+In order to start the server, run the command:
+python server.py
 
-//on the client open index.html
+Open index.html on the client side
 ```
