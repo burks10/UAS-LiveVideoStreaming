@@ -9,7 +9,7 @@ This project will be used for the 2016 UAS competition.
     Flask
     </td>
     <td>
-    http://flask.pocoo.org
+    http://flask.pocoo.org `sudo pip install -U Flask`
     </td>
   </tr>
   
@@ -36,7 +36,7 @@ This project will be used for the 2016 UAS competition.
     flask-cors
     </td>
     <td>
-    https://github.com/corydolphin/flask-cors
+    https://github.com/corydolphin/flask-cors `sudo pip install -U flask-cors`
     </td>
   </tr>
 </table>
