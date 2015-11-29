@@ -1,6 +1,6 @@
 var app = angular.module("uasApp", []);
 var count = 0;
-var host = "http://10.42.0.1:80/"
+var host = "http://127.0.0.1:5000/"
 
 // Video Controller
 getFrame = app.controller("videoCtrl",
@@ -29,7 +29,7 @@ getFrame = app.controller("videoCtrl",
                 );
                 count = count + 1;
             }
-        }, 100);
+        }, 200);
     }
 );
 
