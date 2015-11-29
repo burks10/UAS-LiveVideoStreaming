@@ -19,6 +19,11 @@ def get_image(imgId):
         response.headers["imgId"] = imgId
         return response
 
+@app.route("/test_connection/")
+def test_connection():
+    response = make_response("Everything is ready to go!")
+    return response
+
 if __name__ == "__main__":
     global count
     count = 0

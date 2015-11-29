@@ -5,26 +5,49 @@ var count = 0;
 getFrame = app.controller("videoCtrl",
     function($scope, $http, $interval) {
         $interval(function() {
-            var img;
+            if ($scope.isConnected) {
+                var img;
 
-            // Design Request
+                // Design Request
+                var request = {
+                    method: "GET",
+                    url: "http://127.0.0.1:5000/get_image/" + count.toString()
+                }
+
+                // Send Request
+                $http(request).then(
+                    // Success
+                    function(response) {
+                        $scope.imgUrl = "http://127.0.0.1:5000/get_image/" + count.toString();
+                    },
+                    // Failure
+                    function(response) {
+                        $scope.imgUrl = "http://127.0.0.1:5000/get_image/" + count.toString();
+                    }
+                );
+                count = count + 1;
+            }
+        }, 100);
+    }
+);
+
+app.controller("testCtrl",
+    function($scope, $http) {
+        $scope.test_connection = function() {
             var request = {
                 method: "GET",
-                url: "http://127.0.0.1:5000/get_image/" + count.toString()
+                url: "http://127.0.0.1:5000/test_connection/"
             }
 
-            // Send Request
             $http(request).then(
                 // Success
                 function(response) {
-                    $scope.imgUrl = "http://127.0.0.1:5000/get_image/" + count.toString();
+                    alert("Connection Test Passed")
                 },
-                // Failure
                 function(response) {
-                    $scope.imgUrl = "http://127.0.0.1:5000/get_image/" + count.toString();
+                    alert("Connection Test Failed")
                 }
             );
-            count = count + 1;
-        }, 10);
+        };
     }
-);
+)
