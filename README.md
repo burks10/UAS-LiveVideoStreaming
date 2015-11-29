@@ -3,9 +3,43 @@ Live video streaming via WiFi-Direct using the Udon Neo platform.
 This project will be used for the 2016 UAS competition.
 
 <h3> Dependencies </h3>
-- Flask
-- AngularJS
-- OpenCV
+<table>
+  <tr>
+    <td>
+    Flask
+    </td>
+    <td>
+    http://flask.pocoo.org
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+    AngularJS
+    </td>
+    <td>
+    https://angularjs.org
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    OpenCV
+    </td>
+    <td>
+    http://opencv.org
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+    flask-cors
+    </td>
+    <td>
+    https://github.com/corydolphin/flask-cors
+    </td>
+  </tr>
+</table>
 
 <h3> How To Run </h3>
 ```
