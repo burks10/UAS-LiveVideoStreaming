@@ -1,5 +1,6 @@
 var app = angular.module("uasApp", []);
 var count = 0;
+var host = "http://10.42.0.20/"
 
 // Video Controller
 getFrame = app.controller("videoCtrl",
@@ -11,18 +12,18 @@ getFrame = app.controller("videoCtrl",
                 // Design Request
                 var request = {
                     method: "GET",
-                    url: "http://127.0.0.1:5000/get_image/" + count.toString()
+                    url: host + "get_image/" + count.toString()
                 }
 
                 // Send Request
                 $http(request).then(
                     // Success
                     function(response) {
-                        $scope.imgUrl = "http://127.0.0.1:5000/get_image/" + count.toString();
+                        $scope.imgUrl = host + "get_image/" + count.toString();
                     },
                     // Failure
                     function(response) {
-                        $scope.imgUrl = "http://127.0.0.1:5000/get_image/" + count.toString();
+                        $scope.imgUrl = host + "get_image/" + count.toString();
                     }
                 );
                 count = count + 1;
@@ -36,7 +37,7 @@ app.controller("testCtrl",
         $scope.test_connection = function() {
             var request = {
                 method: "GET",
-                url: "http://127.0.0.1:5000/test_connection/"
+                url: host + "test_connection/"
             }
 
             $http(request).then(
