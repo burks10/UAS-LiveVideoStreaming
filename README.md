@@ -27,7 +27,7 @@ This project will be used for the 2016 UAS competition.
     OpenCV
     </td>
     <td>
-    http://opencv.org
+    http://opencv.org `sudo apt-get install python-opencv`
     </td>
   </tr>
   
