@@ -1,6 +1,6 @@
 var app = angular.module("uasApp", []);
 var count = 0;
-var host = "http://10.42.0.1/"
+var host = "http://10.42.0.20/"
 
 // Video Controller
 getFrame = app.controller("videoCtrl",
