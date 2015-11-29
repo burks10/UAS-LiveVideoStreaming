@@ -1,6 +1,6 @@
 var app = angular.module("uasApp", []);
 var count = 0;
-var host = "http://10.42.0.20/"
+var host = "http://127.0.0.1:5000/"
 
 // Video Controller
 getFrame = app.controller("videoCtrl",
@@ -12,7 +12,8 @@ getFrame = app.controller("videoCtrl",
                 // Design Request
                 var request = {
                     method: "GET",
-                    url: host + "get_image/" + count.toString()
+                    url: host + "get_image/" + count.toString(),
+                    headers: {"Access-Control-Allow-Origin" : "*"}
                 }
 
                 // Send Request
@@ -37,7 +38,8 @@ app.controller("testCtrl",
         $scope.test_connection = function() {
             var request = {
                 method: "GET",
-                url: host + "test_connection/"
+                url: host + "test_connection/",
+                headers: {"Access-Control-Allow-Origin" : "*"}
             }
 
             $http(request).then(

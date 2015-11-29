@@ -1,8 +1,10 @@
 from flask import Flask
 from flask import send_file
 from flask import make_response
+from flask.ext.cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 #Alternating between 2 Images as a proof of concept
 @app.route("/get_image/<imgId>")
