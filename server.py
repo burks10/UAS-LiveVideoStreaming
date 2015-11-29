@@ -29,4 +29,4 @@ def test_connection():
 if __name__ == "__main__":
     global count
     count = 0
-    app.run(debug=True)
+    app.run(host="10.42.0.1", port=80)
