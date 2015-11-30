@@ -32,7 +32,7 @@ getFrame = app.controller("videoCtrl",
                 );
                 count = count + 1;
             }
-        }, 100);
+        }, 200);
     }
 );
 
