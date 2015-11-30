@@ -6,10 +6,30 @@ This project will be used for the 2016 UAS competition.
 <table>
   <tr>
     <td>
+    <b>
+    Technology
+    </b>
+    </td>
+    <td>
+    <b>
+    Website
+    </b>
+    </td>
+    <td>
+    <b>
+    Installation
+    </b>
+    </td>
+  </tr>
+  <tr>
+    <td>
     Flask
     </td>
     <td>
-    http://flask.pocoo.org `sudo pip install -U Flask`
+    http://flask.pocoo.org
+    </td>
+    <td>
+    sudo pip install -U Flask
     </td>
   </tr>
   
@@ -20,6 +40,9 @@ This project will be used for the 2016 UAS competition.
     <td>
     https://angularjs.org
     </td>
+    <td>
+    N/A
+    </td>
   </tr>
 
   <tr>
@@ -27,7 +50,10 @@ This project will be used for the 2016 UAS competition.
     OpenCV
     </td>
     <td>
-    http://opencv.org `sudo apt-get install python-opencv`
+    http://opencv.org
+    </td>
+    <td>
+    sudo apt-get install python-opencv
     </td>
   </tr>
   
@@ -36,7 +62,10 @@ This project will be used for the 2016 UAS competition.
     flask-cors
     </td>
     <td>
-    https://github.com/corydolphin/flask-cors `sudo pip install -U flask-cors`
+    https://github.com/corydolphin/flask-cors
+    </td>
+    <td>
+    sudo pip install -U flask-cors
     </td>
   </tr>
 </table>
