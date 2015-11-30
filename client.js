@@ -21,8 +21,8 @@ getFrame = app.controller("videoCtrl",
                     // Success
                     function(response) {
                         $scope.imgUrl = host + "get_image/" + count.toString();
-                        // $scope.cpuTemp = response.headers()["cpu-temp"]
-                        // $scope.cpuFreq = response.headers()["cpu-freq"]
+                        $scope.cpuTemp = response.headers()["cpu-temp"];
+                        $scope.cpuFreq = response.headers()["cpu-freq"];
                     },
                     // Failure
                     function(response) {

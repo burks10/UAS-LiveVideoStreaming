@@ -1,95 +1,83 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-    <meta charset="utf-8">
-    <title>UAS - Live Feed</title>
-
-    <!-- Semantic UI -->
-    <link rel="stylesheet" type="text/css" href="../libs/semantic_ui/semantic.min.css">
-    <script src="../libs/semantic_ui/semantic.min.js"></script>
-
-    <!-- AngularJS -->
-    <script src="../libs/angular.min.js"></script>
-
-    <!-- Client Side Code -->
-    <script src="../client.js"></script>
-
-</head>
-
-<body>
-    <div ng-app="uasApp">
-        <h1 class="ui header">
+    <head>
+        <meta charset="utf-8">
+        <title>UAS - Live Feed</title>
+        <!-- Semantic UI -->
+        <link rel="stylesheet" type="text/css" href="../libs/semantic_ui/semantic.min.css">
+        <script src="../libs/semantic_ui/semantic.min.js"></script>
+        <!-- AngularJS -->
+        <script src="../libs/angular.min.js"></script>
+        <!-- Client Side Code -->
+        <script src="../client.js"></script>
+    </head>
+    <body>
+        <div ng-app="uasApp">
+            <h1 class="ui header">
             Live Video
             <div class="sub header">Over Wi-Fi Direct</div>
-        </h1>
-
-
-        <!-- Live Video Feed (Constantly Update)-->
-        <div class="video_feed" ng-controller="videoCtrl">
-            <img class="ui centered image" ng-src="{{imgUrl}}" width="1366" height="468">
-        </div>
-
-        <!-- Settings ToolBar -->
-        <div class="ui blue segment">
-            <!-- Settings Header -->
-            <h2 class="ui icon header">
-                <div class="content">
-                    Settings
+            </h1>
+            <div ng-controller="videoCtrl">
+                <!-- Live Video Feed (Constantly Update)-->
+                <div class="video_feed" >
+                    <img class="ui centered image" ng-src="{{imgUrl}}" width="1366" height="468">
                 </div>
-            </h2>
-
-            </br>
-
-            <!-- Connect & Disconnect -->
-            <div class="ui buttons">
-                <button ng-click="isConnected=true" class="ui button green">Connect</button>
-                <div class="or"></div>
-                <button ng-click="isConnected=false" class="ui red button">Disconnect</button>
+                <!-- Settings ToolBar -->
+                <div class="ui blue segment">
+                    <!-- Settings Header -->
+                    <h2 class="ui icon header">
+                    <div class="content">
+                        Settings
+                    </div>
+                    </h2>
+                    </br>
+                    <!-- Connect & Disconnect -->
+                    <div class="ui buttons">
+                        <button ng-click="isConnected=true" class="ui button green">Connect</button>
+                        <div class="or"></div>
+                        <button ng-click="isConnected=false" class="ui red button">Disconnect</button>
+                    </div>
+                    <!-- Check Connection -->
+                    <button ng-controller="testCtrl" ng-click="test_connection()" class="ui blue button">Test Connection</button>
+                    </br>
+                    <table class="ui celled striped table">
+                        <thead>
+                            <tr>
+                                <th colspan="3">
+                                    Statistics
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="collapsing">
+                                    <i class="refresh icon"></i> FPS
+                                </td>
+                                <td class="right aligned collapsing">10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="plug icon"></i> Connection Status
+                                </td>
+                                <td ng-show="isConnected" class="right aligned">Connected</td>
+                                <td ng-hide="isConnected" class="right aligned">Disconnected</td>
+                            </tr>
+                            <tr>
+                                <td class="collapsing">
+                                    <i class="eyedropper icon"></i> CPU Temperature (Celsius)
+                                </td>
+                                <td class="right aligned collapsing">{{cpuTemp}}</td>
+                            </tr>
+                            <tr>
+                                <td class="collapsing">
+                                    <i class="lightning icon"></i> CPU Frequency (Hz)
+                                </td>
+                                <td class="right aligned collapsing">{{cpuFreq}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-            <!-- Check Connection -->
-            <button ng-controller="testCtrl" ng-click="test_connection()" class="ui blue button">Test Connection</button>
-
-            </br>
-            <table class="ui celled striped table">
-                <thead>
-                    <tr>
-                        <th colspan="3">
-                            Statistics
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="collapsing">
-                            <i class="refresh icon"></i> FPS
-                        </td>
-                        <td class="right aligned collapsing">10</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="plug icon"></i> Connection Status
-                        </td>
-                        <td ng-show="isConnected" class="right aligned">Connected</td>
-                        <td ng-hide="isConnected" class="right aligned">Disconnected</td>
-                    </tr>
-                    <tr>
-                        <td class="collapsing">
-                            <i class="eyedropper icon"></i> CPU Temperature (Celsius)
-                        </td>
-                        <td class="right aligned collapsing">{{cpuTemp}}</td>
-                    </tr>
-                    <tr>
-                        <td class="collapsing">
-                            <i class="lightning icon"></i> CPU Frequency (Hz)
-                        </td>
-                        <td class="right aligned collapsing">{{cpuFreq}}</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
