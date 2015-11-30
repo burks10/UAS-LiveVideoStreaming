@@ -1,6 +1,6 @@
 var app = angular.module("uasApp", []);
 var count = 0;
-var host = "http://127.0.0.1:5000/"
+var host = "http://10.42.0.87:50/"
 
 // Video Controller
 getFrame = app.controller("videoCtrl",
@@ -20,14 +20,13 @@ getFrame = app.controller("videoCtrl",
                 $http(request).then(
                     // Success
                     function(response) {
-                        alert(angular.toJson(response.headers()["img-id"]))
                         $scope.imgUrl = host + "get_image/" + count.toString();
-                        $scope.cpuTemp = response.headers()["cpu-temp"]
-                        $scope.cpuFreq = response.headers()["cpu-freq"]
+                        // $scope.cpuTemp = response.headers()["cpu-temp"]
+                        // $scope.cpuFreq = response.headers()["cpu-freq"]
                     },
                     // Failure
                     function(response) {
-                        //$scope.imgUrl = host + "get_image/" + count.toString();
+                         $scope.imgUrl = host + "get_image/" + count.toString();
                     }
                 );
                 count = count + 1;
