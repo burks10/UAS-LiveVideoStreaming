@@ -19,20 +19,20 @@ def get_image(imgId):
     count += 1
 
     #Read Sensor Values
-   # cpuFreqFile = open("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", "r")
-   # cpuFreq = ( int(cpuFreqFile.read()) / 1000)
-   # cpuTempFile = open("/sys/class/thermal/thermal_zone0/temp", "r")
-   # cpuTemp = ( int(cpuTempFile.read()) / 1000 )
+    cpuFreqFile = open("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", "r")
+    cpuFreq = ( int(cpuFreqFile.read()) / 1000)
+    cpuTempFile = open("/sys/class/thermal/thermal_zone0/temp", "r")
+    cpuTemp = ( int(cpuTempFile.read()) / 1000 )
 
     #Capture Image on WebCam
     create_capture(webCam)
 
     #Create Response
     response = make_response(send_file("frame.jpg", mimetype='image/jpeg'))
-   # response.headers["Access-Control-Expose-Headers"] = "img-id, cpu-temp, cpu-freq"
-   # response.headers["img-id"] = imgId
-   # response.headers["cpu-temp"] = cpuTemp
-   # response.headers["cpu-freq"] = cpuFreq
+    response.headers["Access-Control-Expose-Headers"] = "img-id, cpu-temp, cpu-freq"
+    response.headers["img-id"] = imgId
+    response.headers["cpu-temp"] = cpuTemp
+    response.headers["cpu-freq"] = cpuFreq
     return response
 
 @app.route("/test_connection/")
