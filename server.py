@@ -12,14 +12,27 @@ CORS(app)
 
 #Alternating between 2 Images as a proof of concept
 @app.route("/get_image/<imgId>")
-def get_image(imgId):
+def get_image(imgId, cpuTemp, cpuFreq):
     global count
     global webCam
     imgId = count
     count += 1
+
+    #Read Sensor Values
+    cpuFreqFile = open("path/to/freq", "r")
+    cpuFreq = ( int(cpuFreqFile.read()) / 1000)
+    cpuTempFile = open("path/to/temp", "r")
+    cpuTemp = ( int(cpuTempFile.read()) / 1000 )
+
+    #Capture Image on WebCam
     create_capture(webCam)
+
+    #Create Response
     response = make_response(send_file("frame.jpg", mimetype='image/jpeg'))
-    response.headers["imgId"] = imgId
+    response.headers["Access-Control-Expose-Headers"] = "img-id, cpu-temp, cpu-freq"
+    response.headers["img-id"] = imgId
+    response.headers["cpu-temp"] = cpuTemp
+    response.headers["cpu-freq"] = cpuFreq
     return response
 
 @app.route("/test_connection/")

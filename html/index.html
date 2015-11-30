@@ -74,7 +74,18 @@
                         <td ng-show="isConnected" class="right aligned">Connected</td>
                         <td ng-hide="isConnected" class="right aligned">Disconnected</td>
                     </tr>
-
+                    <tr>
+                        <td class="collapsing">
+                            <i class="eyedropper icon"></i> CPU Temperature (Celsius)
+                        </td>
+                        <td class="right aligned collapsing">{{cpuTemp}}</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">
+                            <i class="lightning icon"></i> CPU Frequency (Hz)
+                        </td>
+                        <td class="right aligned collapsing">{{cpuFreq}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

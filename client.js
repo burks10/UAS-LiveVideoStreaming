@@ -20,16 +20,19 @@ getFrame = app.controller("videoCtrl",
                 $http(request).then(
                     // Success
                     function(response) {
+                        alert(angular.toJson(response.headers()["img-id"]))
                         $scope.imgUrl = host + "get_image/" + count.toString();
+                        $scope.cpuTemp = response.headers()["cpu-temp"]
+                        $scope.cpuFreq = response.headers()["cpu-freq"]
                     },
                     // Failure
                     function(response) {
-                        $scope.imgUrl = host + "get_image/" + count.toString();
+                        //$scope.imgUrl = host + "get_image/" + count.toString();
                     }
                 );
                 count = count + 1;
             }
-        }, 200);
+        }, 100);
     }
 );
 
